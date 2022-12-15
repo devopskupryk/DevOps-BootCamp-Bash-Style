@@ -20,7 +20,7 @@ while [[ $choice -ne 3 ]]; do
     #echo "$number"
     while [[ $code -eq 0 ]]; do
       index=11; 
-      random=$(shuf -i 0-9 -n 10)
+      random=($(shuf -i 0-9 -n 10))
       echo "${random[@]}"
     
       for i in {1..10}; do
