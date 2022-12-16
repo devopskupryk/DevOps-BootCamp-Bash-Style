@@ -15,19 +15,18 @@ while [[ $choice -ne 3 ]]; do
     code=0
     point=0
     echo "Enter any number between 0 and 9 : "
-    read -r number
-    #echo "$code"
-    #echo "$number"
-    while [[ $code -eq 0 ]]; do
+    read -r number 
+
+    while [[ $code -eq 0 ]]; do 
       index=11; 
-      random=$(shuf -i 0-9 -n 10)
+      mapfile -t random < <(shuf -i 0-9 -n 10)
       echo "${random[@]}"
     
       for i in {1..10}; do
         a[i]=$i
       done
       echo "${a[@]}"
-      echo "Enter the index of your number \: "
+      echo "Enter the index of your number : "
       read -t 10 -r index
     
       if [[ $? -gt 128 ]]; then
